@@ -43,6 +43,7 @@ steps:
               </tr>
             </tbody>
           </table>
+
       - select: Style
         key: style
         default: default
@@ -62,6 +63,15 @@ steps:
           - label: (Please ignore these last two)
             value: default
 
+      - select: Append to existing annotation?
+        key: append
+        default: ''
+        options:
+          - label: No
+            value: ''
+          - label: Yes
+            value: '--append'
+
   - label: 👀Display Annotation
     command: |
-      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)"; buildkite-agent pipeline upload
+      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)" $(buildkite-agent meta-data get append); buildkite-agent pipeline upload
