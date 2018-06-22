@@ -1,0 +1,67 @@
+steps:
+  - block: 📝Author an Annotation
+    fields:
+      - text: Annotation Body
+        key: body
+        default: |
+          <h4>Definition List</h4>
+          <dl class="flex flex-wrap mxn1">
+            <div class="m1">
+              <dt>New Files in PR</dt>
+              <dd>
+                <big><big>88</big></big>%<br>
+                115 of 131 lines<br>
+              </dd>
+            </div>
+            <div class="m1">
+              <dt>Files Changed in PR</dt>
+              <dd>
+                <big><big>89</big></big>%<br>
+                332 of 372 lines
+              </dd>
+            </div>
+            <div class="m1">
+              <dt>All Files</dt>
+              <dd>
+                <big><big>90</big></big>%<br>
+                22,998 of 25,484 lines
+              </dd>
+            </div>
+          </dl>
+          <h4>Tables</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>foo</th>
+                <th>bar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>baz</td>
+                <td>bim</td>
+              </tr>
+            </tbody>
+          </table>
+      - select: Style
+        key: style
+        default: default
+        options:
+          - label: ✏️Default
+            value: default
+          - label: ℹ️Information
+            value: info
+          - label: ⚠️Warning
+            value: warning
+          - label: 🚫Error
+            value: error
+          - label: ✅Success
+            value: success
+          - label: (There are only five types but I want this to be a dropdown)
+            value: default
+          - label: (Please ignore these last two)
+            value: default
+
+  - label: 👀Display Annotation
+    command: |
+      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)"
