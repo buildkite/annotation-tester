@@ -1,0 +1,5 @@
+name: "📝 Annotation Tester"
+description: "Test writing Buildkite annotation bodies directly"
+steps:
+  - command: "buildkite-agent pipeline upload"
+    label: ":pipeline:"
