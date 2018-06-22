@@ -67,9 +67,9 @@ steps:
         key: append
         default: ''
         options:
-          - label: No
+          - label: 'No'
             value: ''
-          - label: Yes
+          - label: 'Yes'
             value: '--append'
 
   - label: 👀Display Annotation
