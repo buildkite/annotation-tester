@@ -64,4 +64,4 @@ steps:
 
   - label: 👀Display Annotation
     command: |
-      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)"
+      buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)"; buildkite-agent pipeline upload
