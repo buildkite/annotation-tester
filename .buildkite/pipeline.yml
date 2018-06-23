@@ -65,6 +65,7 @@ steps:
 
       - select: Append to existing annotation?
         key: append
+        required: false
         default: ''
         options:
           - label: 'No'
