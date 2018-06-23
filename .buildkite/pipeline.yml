@@ -46,7 +46,7 @@ steps:
 
       - select: Style
         key: style
-        default: default
+        required: false
         options:
           - label: ✏️Default
             value: default
@@ -58,10 +58,6 @@ steps:
             value: error
           - label: ✅Success
             value: success
-          - label: (There are only five types but I want this to be a dropdown)
-            value: default
-          - label: (Please ignore these last two)
-            value: default
 
       - select: Append to existing annotation?
         key: append
