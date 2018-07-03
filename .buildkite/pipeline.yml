@@ -1,5 +1,5 @@
 steps:
-  - block: 📝Author an Annotation
+  - block: 📝
     fields:
       - text: Annotation Body
         key: body
@@ -48,15 +48,15 @@ steps:
         key: style
         required: false
         options:
-          - label: ✏️Default
+          - label: ✏️ Default
             value: default
-          - label: ℹ️Information
+          - label: ℹ️ Information
             value: info
-          - label: ⚠️Warning
+          - label: ⚠️ Warning
             value: warning
-          - label: 🚫Error
+          - label: 🚫 Error
             value: error
-          - label: ✅Success
+          - label: ✅ Success
             value: success
 
       - select: Append to existing annotation?
@@ -66,6 +66,6 @@ steps:
           - label: 'Yes'
             value: '--append'
 
-  - label: 👀Display Annotation
+  - label: 👀
     command: |
       buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)" $(buildkite-agent meta-data get append); buildkite-agent pipeline upload
