@@ -61,11 +61,10 @@ steps:
 
       - select: Append to existing annotation?
         key: append
-        required: false
-        default: ''
+        default: ' '
         options:
           - label: 'No'
-            value: ''
+            value: ' '
           - label: 'Yes'
             value: '--append'
 
