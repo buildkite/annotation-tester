@@ -1,5 +1,5 @@
 steps:
-  - block: 📝
+  - block: 📝 Annotate
     fields:
       - text: Annotation Body
         key: body
