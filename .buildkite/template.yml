@@ -3,3 +3,5 @@ description: "Test writing Buildkite annotation bodies directly"
 steps:
   - command: "buildkite-agent pipeline upload"
     label: ":pipeline:"
+    agents:
+      - queue=${QUEUE:-default}
