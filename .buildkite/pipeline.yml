@@ -70,5 +70,7 @@ steps:
             value: success
 
   - label: 👀
+    agents:
+      - queue=${QUEUE:-default}
     command: |
       buildkite-agent meta-data get body | buildkite-agent annotate --style "$(buildkite-agent meta-data get style)" $([[ $(buildkite-agent meta-data get append) == 'append' ]] && echo '--append'); env ANNOTATE_LABEL="Update" buildkite-agent pipeline upload
